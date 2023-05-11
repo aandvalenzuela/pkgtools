@@ -2440,6 +2440,7 @@ class Package(object):
             self.version = calculateHumanReadableVersion(self)
             return
 
+        checksumCalculator.addStrings("ForceChangeHash")
         checksumCalculator.addStrings(self.origSpec)
         checksumCalculator.addStrings(DEFAULT_SECTIONS.values())
         checksumCalculator.addStrings(PKGFactory.sectionOptions.values())
